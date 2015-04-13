@@ -1,83 +1,108 @@
 <!doctype html>
-<html class="no-js" lang="pt-br" ng-app="app">
+<html class="no-js" lang="pt-br" data-ng-app="app">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+
   <title>Thiago Henrique Poiani</title>
   <meta name="description" content="">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <style>
-    [ng\:cloak], [ng-cloak], .ng-cloak {
+    [ng\:cloak], [data-ng-cloak], .data-ng-cloak {
       display: none !important;
     }
   </style>
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200">
+  <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
+
 </head>
-<body ng-controller="IndexController as index">
+<body>
   <header>
-    <h1 ng-cloak>{{index.author.name}}</h1>
+    <h1>Thiago Henrique Poiani</h1>
   </header>
 
   <main>
     <section>
-      <h2>Sobre</h2>
-      <p ng-bind-html="index.author.about"></p>
+      <h2><i class="fa fa-book"></i> Sobre</h2>
+      <p class="about">
+        Mestrando em <strong>Ciências da Computação</strong> no Instituto de Ciências Matemáticas e de Computação da <a href="http://www.icmc.usp.br/" target="_blank" title="ICMC-USP">Universidade de São Paulo</a>.
+        <br>
+        Cursando especialização em <strong>Desenvolvimento de Software para Web</strong> na <a href="http://www.ufscar.br" target="_blank" title="UFSCar">Universidade Federal de São Carlos</a>.
+        <br>
+        Tecnólogo em <strong>Análise e Desenvolvimento de Sistemas</strong> pelo <a href="http://www.ifspsaocarlos.edu.br/" target="_blank" title="IFSP">Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, campus São Carlos</a>.
+      </p>
     </section>
 
-    <section ng-controller="ProjectController as project">
-      <h2>Projetos</h2>
+    <section data-ng-controller="ProjectController as project">
+      <h2><i class="fa fa-code"></i> Projetos</h2>
 
-      <ul>
-        <li ng-repeat="project in project.projects">
-          <a href="{{project.link}}" target="_blank">
-            <p ng-cloak>{{project.year}}</p>
+      <ul class="cards">
+        <li class="card small" data-ng-repeat="project in project.projects | orderBy: 'created_at':true" data-ng-cloak>
+          <a data-ng-href="{{project.link}}" target="_blank">
+            <p class="year">{{project.year}}</p>
+
             <figure>
-              <img ng-src="{{project.image}}" alt="">
-              <figcaption ng-cloak>{{project.name}}</figcaption>
+                <figcaption>
+                  <h3>{{project.name}}</h3>
+                </figcaption>
+              <img data-ng-src="{{project.image.src}}" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="{{project.image.alt}}" width="{{project.image.width}}" height="{{project.image.height}}">
             </figure>
-            <p ng-cloak>{{project.description}}</p>
+
+            <div class="description">
+              <p>{{project.description}}</p>
+            </div>
           </a>
         </li>
       </ul>
     </section>
 
-    <section ng-controller="ResearchController as research">
-      <h2>Pesquisas</h2>
+    <section data-ng-controller="ResearchController as research">
+      <h2><i class="fa fa-university"></i> Pesquisas</h2>
 
-      <ul>
-        <li ng-repeat="research in research.researchs">
-          <a href="{{research.link}}" target="_blank">
-            <p ng-cloak>{{research.year}}</p>
-            <figure>
-              <img ng-src="{{research.image}}" alt="">
-              <figcaption ng-cloak>{{research.authors}}</figcaption>
-            </figure>
-            <p ng-cloak>{{research.title}}</p>
-            <p ng-cloak>{{research.abstract}}</p>
+      <ul class="cards">
+        <li class="card large" data-ng-repeat="research in research.researches | orderBy: 'created_at':true" data-ng-cloak>
+          <a data-ng-href="{{research.link}}" target="_blank">
+            <p class="year">{{research.year}}</p>
+            <h3>{{research.title}}</h3>
+
+            <div class="description">
+              <p>{{research.authors}}</p>
+              <p>{{research.abstract}}</p>
+            </div>
           </a>
         </li>
       </ul>
     </section>
 
-    <section ng-controller="EventController as event">
-      <h2>Eventos</h2>
+    <section data-ng-controller="EventController as event">
+      <h2><i class="fa fa-users"></i> Eventos</h2>
 
-      <ul>
-        <li ng-repeat="event in event.events">
-          <a href="{{event.link}}" target="_blank">
-            <p ng-cloak>{{event.year}}</p>
+      <ul class="cards">
+
+        <li class="card small" data-ng-repeat="event in event.events | orderBy: 'created_at':true" data-ng-cloak>
+          <a data-ng-href="{{event.link}}" target="_blank">
+            <p class="year">{{event.year}}</p>
+
             <figure>
-              <img ng-src="{{event.image}}" alt="">
-              <figcaption ng-cloak>{{event.name}}</figcaption>
+                <figcaption>
+                  <h3>{{event.name}}</h3>
+                </figcaption>
+              <img data-ng-src="{{event.image.src}}" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="{{event.image.alt}}" width="{{event.image.width}}" height="{{event.image.height}}">
             </figure>
-            <p ng-cloak>{{event.local}}</p>
-            <p ng-cloak>{{event.category}}</p>
-            <p ng-cloak>{{event.title}}</p>
+
+            <div class="description">
+              <p><strong>{{event.title}}</strong></p>
+              <p>{{event.category}}</p>
+              <p>Local: {{event.local}}</p>
+            </div>
           </a>
         </li>
       </ul>
@@ -87,9 +112,7 @@
   <script src="js/main.js"></script>
 
   <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
   <script src="js/app.module.js"></script>
-  <script src="js/controllers/index.js"></script>
   <script src="js/controllers/project.js"></script>
   <script src="js/controllers/research.js"></script>
   <script src="js/controllers/event.js"></script>

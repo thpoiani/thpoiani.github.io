@@ -97,9 +97,158 @@ textarea {
 
 
 
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
 
+h1,
+h2,
+h3 {
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
 
+h1 {
+  color: #0074D9;
+  font-size: 3em;
+}
 
+h2 {
+  color: #0074D9;
+  position: relative;
+}
+
+h3 {
+  font-size: 1.4em;
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+
+h2 i.fa {
+  vertical-align: top;
+  margin-top: 3px;
+}
+
+.about {
+  font-size: 0.8em;
+  text-align: justify;
+  font-weight: 300;
+}
+
+.about a,
+.about strong {
+  color: #222;
+  font-weight: 400;
+}
+
+.cards {
+  display: table;
+  border-collapse:separate;
+  border-spacing: 10px;
+
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.card {
+  display: table-cell;
+  vertical-align: top;
+
+  box-shadow: 0 1px 2px #aaa;
+  background: white;
+
+  font-size: 16px;
+  margin: 0 1rem 1rem 0;
+
+  position: relative;
+}
+
+.card.small {
+  /*width: 33.33333%;*/
+  width: 300px
+}
+
+.card.large {
+  /*width: 50%;*/
+  width: 455px;
+}
+
+.card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.card a {
+  text-decoration: none;
+  color: #222;
+  display: block;
+}
+
+.card .year {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  margin: 0;
+  font-size: 0.8em;
+  font-weight: 300;
+  /*
+  background: #DDDDDD;
+  padding: 0 5px;
+  */
+}
+
+/*
+.card .year::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 10px 0;
+  border-color: transparent #DDDDDD transparent transparent;
+  position: absolute;
+  top: 17px;
+  right: 0;
+}
+
+.card .year::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 20px 0 0;
+  border-color: #DDDDDD transparent transparent transparent;
+  position: absolute;
+  top: 17px;
+  left: 0;
+}
+*/
+
+.card figure {
+  margin: 0;
+  text-align: center;
+}
+
+.card figure img {
+  max-width: 300px;
+}
+
+.card .description {
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  color: #494949;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: justify;
+}
+
+.card .description strong {
+  font-weight: 400;
+}
 
 
 
