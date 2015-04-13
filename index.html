@@ -9,12 +9,18 @@
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+  <style>
+    [ng\:cloak], [ng-cloak], .ng-cloak {
+      display: none !important;
+    }
+  </style>
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-controller="IndexController as index">
   <header>
-    <h1>{{index.author.name}}</h1>
+    <h1 ng-cloak>{{index.author.name}}</h1>
   </header>
 
   <main>
@@ -29,12 +35,12 @@
       <ul>
         <li ng-repeat="project in project.projects">
           <a href="{{project.link}}" target="_blank">
-            <p class="year">{{project.year}}</p>
+            <p ng-cloak>{{project.year}}</p>
             <figure>
               <img ng-src="{{project.image}}" alt="">
-              <figcaption>{{project.name}}</figcaption>
+              <figcaption ng-cloak>{{project.name}}</figcaption>
             </figure>
-            <p>{{project.description}}</p>
+            <p ng-cloak>{{project.description}}</p>
           </a>
         </li>
       </ul>
@@ -46,13 +52,13 @@
       <ul>
         <li ng-repeat="research in research.researchs">
           <a href="{{research.link}}" target="_blank">
-            <p class="year">{{research.year}}</p>
+            <p ng-cloak>{{research.year}}</p>
             <figure>
               <img ng-src="{{research.image}}" alt="">
-              <figcaption>{{research.authors}}</figcaption>
+              <figcaption ng-cloak>{{research.authors}}</figcaption>
             </figure>
-            <p>{{research.title}}</p>
-            <p>{{research.abstract}}</p>
+            <p ng-cloak>{{research.title}}</p>
+            <p ng-cloak>{{research.abstract}}</p>
           </a>
         </li>
       </ul>
@@ -64,14 +70,14 @@
       <ul>
         <li ng-repeat="event in event.events">
           <a href="{{event.link}}" target="_blank">
-            <p class="year">{{event.year}}</p>
+            <p ng-cloak>{{event.year}}</p>
             <figure>
               <img ng-src="{{event.image}}" alt="">
-              <figcaption>{{event.name}}</figcaption>
+              <figcaption ng-cloak>{{event.name}}</figcaption>
             </figure>
-            <p>{{event.local}}</p>
-            <p>{{event.category}}</p>
-            <p>{{event.title}}</p>
+            <p ng-cloak>{{event.local}}</p>
+            <p ng-cloak>{{event.category}}</p>
+            <p ng-cloak>{{event.title}}</p>
           </a>
         </li>
       </ul>
