@@ -143,10 +143,6 @@ h2 i.fa {
 }
 
 .cards {
-  display: table;
-  border-collapse:separate;
-  border-spacing: 10px;
-
   font-size: 0;
   margin: 0;
   padding: 0;
@@ -155,7 +151,7 @@ h2 i.fa {
 }
 
 .card {
-  display: table-cell;
+  display: inline-block;
   vertical-align: top;
 
   box-shadow: 0 1px 2px #aaa;
@@ -167,19 +163,22 @@ h2 i.fa {
   position: relative;
 }
 
+.card:nth-child(3n) {
+  margin-right: 0;
+}
+
 .card.small {
   /*width: 33.33333%;*/
-  width: 300px
+  width: 300px;
+  height: 500px;
 }
 
 .card.large {
   /*width: 50%;*/
   width: 455px;
+  height: 500px;
 }
 
-.card:nth-child(3n) {
-  margin-right: 0;
-}
 
 .card a {
   text-decoration: none;
@@ -253,12 +252,64 @@ h2 i.fa {
 
 
 
+/* http://davidwalsh.name/css-flip */
 
+  /* entire container, keeps perspective */
+  .flip-container {
+      perspective: 1000;
+      transform-style: preserve-3d;
+  }
+      /*  UPDATED! flip the pane when hovered */
+      .flip-container:hover .back {
+          transform: rotateY(0deg);
+      }
+      .flip-container:hover .front {
+          transform: rotateY(180deg);
+      }
 
+  .small .flip-container,
+  .small .front,
+  .small .back {
+      width: 300px;
+      height: 500px;
+  }
 
+  .large .flip-container,
+  .large .front,
+  .large .back {
+      width: 455px;
+      height: 500px;
+  }
 
+  /* flip speed goes here */
+  .flipper {
+      transition: 0.6s;
+      transform-style: preserve-3d;
 
+      position: relative;
+  }
 
+  /* hide back of pane during swap */
+  .front, .back {
+      backface-visibility: hidden;
+      transition: 0.6s;
+      transform-style: preserve-3d;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+  }
+
+  /*  UPDATED! front pane, placed above back */
+  .front {
+      z-index: 2;
+      transform: rotateY(0deg);
+  }
+
+  /* back, initially hidden pane */
+  .back {
+      transform: rotateY(-180deg);
+  }
 
 /* ==========================================================================
    Helper classes
