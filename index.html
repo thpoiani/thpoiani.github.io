@@ -31,7 +31,7 @@
 
   <main>
     <section>
-      <h2><i class="fa fa-book"></i> Sobre</h2>
+      <h2 id="sobre"><i class="fa fa-book"></i> Sobre</h2>
       <p class="about">
         Mestrando em <strong>Ciências da Computação</strong> no Instituto de Ciências Matemáticas e de Computação da <a href="http://www.icmc.usp.br/" target="_blank" title="ICMC-USP">Universidade de São Paulo</a>.
         <br>
@@ -42,101 +42,68 @@
     </section>
 
     <section data-ng-controller="ProjectController as project">
-      <h2><i class="fa fa-code"></i> Projetos</h2>
+      <h2 id="projetos"><i class="fa fa-code"></i> Projetos</h2>
 
       <ul class="cards">
         <li class="card small" data-ng-repeat="project in project.projects | orderBy: 'created_at':true" data-ng-cloak>
-            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-              <div class="flipper">
-                <div class="front">
-                  <!-- front content -->
-                  <a data-ng-href="{{project.link}}" target="_blank">
-                    <p class="year">{{project.year}}</p>
+            <a data-ng-href="{{project.gsx$link.$t}}" target="_blank">
+              <p class="year">{{project.gsx$year.$t}}</p>
 
-                    <figure>
-                        <figcaption>
-                          <h3>{{project.name}}</h3>
-                        </figcaption>
-                      <img data-ng-src="{{project.image.src}}" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="{{project.image.alt}}" width="{{project.image.width}}" height="{{project.image.height}}">
-                    </figure>
+              <figure>
+                  <figcaption>
+                    <h3>{{project.gsx$name.$t}}</h3>
+                  </figcaption>
+                <img data-ng-src="{{project.gsx$image.$t}}" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="{{project.gsx$title.$t}}">
+              </figure>
 
-                    <div class="description">
-                      <p>{{project.description}}</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="back">
-                  <!-- back content -->
-
-                </div>
+              <div class="description">
+                <p>{{project.gsx$description.$t}}</p>
               </div>
-            </div>
+            </a>
         </li>
       </ul>
     </section>
 
     <section data-ng-controller="ResearchController as research">
-      <h2><i class="fa fa-university"></i> Pesquisas</h2>
+      <h2 id="pesquisas"><i class="fa fa-university"></i> Pesquisas</h2>
 
       <ul class="cards">
         <li class="card large" data-ng-repeat="research in research.researches | orderBy: 'created_at':true" data-ng-cloak>
-          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="front">
-                <!-- front content -->
-                <a data-ng-href="{{research.link}}" target="_blank">
-                  <p class="year">{{research.year}}</p>
-                  <h3>{{research.title}}</h3>
+          <a data-ng-href="{{research.gsx$link.$t}}" target="_blank">
+            <p class="year">{{research.gsx$year.$t}}</p>
+            <h3>{{research.gsx$title.$t}}</h3>
 
-                  <div class="description">
-                    <p>{{research.authors}}</p>
-                    <p>{{research.abstract}}</p>
-                  </div>
-                </a>
-              </div>
-              <div class="back">
-                <!-- back content -->
-
-              </div>
+            <div class="description">
+              <p>{{research.gsx$authors.$t}}</p>
+              <p>{{research.gsx$abstract.$t}}</p>
             </div>
-          </div>
+          </a>
         </li>
       </ul>
     </section>
 
     <section data-ng-controller="EventController as event">
-      <h2><i class="fa fa-users"></i> Eventos</h2>
+      <h2 id="eventos"><i class="fa fa-users"></i> Eventos</h2>
 
       <ul class="cards">
 
         <li class="card small" data-ng-repeat="event in event.events | orderBy: 'created_at':true" data-ng-cloak>
-          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="front">
-                <!-- front content -->
-                <a data-ng-href="{{event.link}}" target="_blank">
-                  <p class="year">{{event.year}}</p>
+          <a data-ng-href="{{event.gsx$link.$t}}" target="_blank">
+            <p class="year">{{event.gsx$year.$t}}</p>
 
-                  <figure>
-                      <figcaption>
-                        <h3>{{event.name}}</h3>
-                      </figcaption>
-                    <img data-ng-src="{{event.image.src}}" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="{{event.image.alt}}" width="{{event.image.width}}" height="{{event.image.height}}">
-                  </figure>
+            <figure>
+                <figcaption>
+                  <h3>{{event.gsx$name.$t}}</h3>
+                </figcaption>
+              <img data-ng-src="{{event.gsx$image.$t}}" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="{{event.gsx$title.$t}}">
+            </figure>
 
-                  <div class="description">
-                    <p><strong>{{event.title}}</strong></p>
-                    <p>{{event.category}}</p>
-                    <p>Local: {{event.local}}</p>
-                  </div>
-                </a>
-              </div>
-              <div class="back">
-                <!-- back content -->
-
-              </div>
+            <div class="description">
+              <p><strong>{{event.gsx$title.$t}}</strong></p>
+              <p>{{event.gsx$category.$t}}</p>
+              <p>Local: {{event.gsx$local.$t}}</p>
             </div>
-          </div>
+          </a>
         </li>
       </ul>
     </section>
