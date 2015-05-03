@@ -113,10 +113,32 @@ html body {
   text-rendering: optimizeLegibility;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #222;
+}
+
 header {
   height: 256px;
   padding: 115px 16px 0;
   background-color: #f9f9f9;
+}
+
+footer {
+  height: 32px;
+  line-height: 32px;
+  padding: 0;
+  margin: 0;
+  margin-top: 64px;
+}
+
+footer p {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 100;
+  text-align: center;
 }
 
 header.small {
@@ -151,7 +173,8 @@ h1, h2, h3 {
   margin: 0;
 }
 
-header.transition {
+header.transition,
+footer.transition {
   -webkit-transition: background 2200ms ease;
   -moz-transition: background 2200ms ease;
   -ms-transition: background 2200ms ease;
@@ -167,39 +190,48 @@ h2.transition {
   transition: all 2200ms ease;
 }
 
-.red header {
+.red header,
+.red footer {
   background-color: #F44336;
 }
 
-.purple header {
+.purple header,
+.purple footer {
   background-color: #9C27B0;
 }
 
-.indigo header {
+.indigo header,
+.indigo footer {
   background-color: #3F51B5;
 }
 
-.blue header {
+.blue header,
+.blue footer {
   background-color: #2196F3;
 }
 
-.green header {
+.green header,
+.green footer {
   background-color: #4CAF50
 }
 
-.lime header {
+.lime header,
+.lime footer {
   background-color: #CDDC39;
 }
 
-.yellow header {
+.yellow header,
+.yellow footer {
   background-color: #FFEB3B;
 }
 
-.orange header {
+.orange header,
+.orange footer {
   background-color: #FF9800;
 }
 
-.brown header {
+.brown header,
+.brown footer {
   background-color: #795548;
 }
 
@@ -284,7 +316,6 @@ section {
 
 .about a,
 .about strong {
-  color: #222;
   font-weight: 400;
 }
 
@@ -367,9 +398,17 @@ section {
   font-weight: 400;
 }
 
+table {
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 36px;
+  border-collapse: separate;
+  border-spacing: 10px 0;
+}
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-  html body {
+  html body main {
     margin: 0 10px;
   }
 
