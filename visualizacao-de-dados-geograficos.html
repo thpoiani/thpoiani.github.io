@@ -1,0 +1,172 @@
+<!doctype html>
+<html class="no-js" lang="pt-br" data-ng-app="app">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Thiago Henrique Poiani</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <style>
+    [ng\:cloak], [data-ng-cloak], .data-ng-cloak {
+      display: none !important;
+    }
+  </style>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400">
+  <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
+
+</head>
+<body>
+  <header id="header" class="transition">
+    <a href="/" style="text-decoration: none">
+      <h1 id="logo">Thiago Henrique Poiani</h1>
+    </a>
+  </header>
+
+  <main id="main">
+    <section data-ng-controller="ResearchController as research">
+      <h2 class="transition" id="pesquisas"><i class="fa fa-university"></i> Visualização de dados geográficos heterogêneos para suporte à tomada de decisões na gestão de risco de inundações</h2>
+
+      <div>
+        <strong>Tema:</strong> Visual Analytics
+        <br><br>
+
+        <strong>Lacuna/problema:</strong> Visualização de dados de contexto geográfico de fontes distintas
+        <br><br>
+
+        <strong>Hipóteses e Objetivo:</strong>
+        <br>
+        <div class="space">
+          <strong>Hipóteses:</strong>
+          <ol>
+            <li>Dados de contexto geográfico não são combinados com mídias sociais em Sistemas de Informações Geográficas</li>
+            <li>As interfaces de visualização de dados das agências de emergências não são suficientes para prevenção e previsão de eventos naturais</li>
+          </ol>
+
+          <br>
+
+          <strong>Objetivo Geral:</strong> Desenvolver uma abordagem de visualização de dados geográficos integrados, vindos de fontes heterogêneas, para o suporte à tomada de decisões na gestão de risco de inundações
+
+          <br><br>
+
+          <strong>Objetivos Específicos:</strong>
+          <ol>
+            <li>Desenvolver um método de integração de fontes heterogêneas (dados oficiais, redes de sensores, informações geográficas voluntárias e mídias sociais) em uma base unificada de informações</li>
+            <li>Desenvolver uma interface interativa para representação visual de dados geográficos heterogêneos</li>
+            <li>Avaliar experimentalmente a abordagem de visualização</li>
+            <li>As representações visuais de dados geográficos heterogêneos auxiliam no processo de tomada de decisão na gestão de risco de inundações</li>
+          </ol>
+        </div>
+        <br>
+
+        <strong>Justificativa/motivação:</strong>
+        Conforme os dados disponibilizados pelo Centre for Research on the Epidemiology of Disasters (EM-DAT, 2009), as inundações no Brasil foram os eventos naturais que mais afetaram pessoas e causaram mortes entre o período de 2004 e 2014
+        <br><br>
+
+        <strong>Resumo com Estruturação Explícita das partes componentes:</strong>
+
+        <div class="space">
+          <strong>Contexto:</strong> Inundações são frequentes e impactantes no mundo, causando mais prejuízos econômicos do que outros eventos naturais.
+          <br>
+          <strong>Lacuna:</strong> A integração de dados de fontes heterogêneas tem um grande potencial para a descoberta de conhecimento para mitigar riscos.
+          <br>
+          <strong>Propósito:</strong> Para minimizar os impactos causados e aumentar a resiliência de comunidades vulneráveis contra esse desastre, Sistemas de Informação Geográfica monitoram dados geoespaciais de redes de sensores, mídias sociais, dados oficiais e de informações de voluntários, contribuindo com a gestão de risco de inundações.
+          <br>
+          <strong>Metodologia:</strong> Este projeto de pesquisa propõe uma abordagem de visualização interativa de dados geográficos heterogêneos para o suporte à tomada de decisões na gestão de risco de inundações.
+        </div>
+        <br>
+
+        <strong>Metodologia de Desenvolvimento dos métodos (ou dos sistemas):</strong>
+        <br>
+
+        <div class="space">
+          O escopo deste projeto é fundamentado na estrutura do escopo de analítica visual, composto por coleta de dados de fontes heterogêneas, pré-processamento dos dados, interação com informações e descoberta de conhecimento útil. Contudo, o componente de coleta de dados não está incluído no escopo, pois a plataforma <a href="http://www.agora.icmc.usp.br/" target="_blank">AGORA</a> disponibiliza dados geográficos de relatórios oficiais, redes de sensores, informações geográficas voluntárias e mídias sociais.
+          <br>
+          O desenvolvimento do projeto deve ser incremental e iterativo, permitindo que pesquisadores e profissionais de agências de emergência (por exemplo, <a href="http://www.cemaden.gov.br/" target="_blank" title="Centro Nacional de Monitoramento e Alertas de Desastres Naturais">CEMADEN</a>) acessem, explorem e comentem melhorias na plataforma, enquanto o processo de desenvolvimento está em andamento.
+
+          <br><br>
+          <strong>Desenvolvimento de método de transformação de dados</strong>
+          <br>
+          Os dados coletados pelos componentes da plataforma AGORA estão em bancos de dados e em serviços geoespaciais de sensores padronizados pela <em>Open Geospatial Consortium</em> - Sensor Observation Service -, possibilitando a consulta de dados captados pelas redes de sensores.
+          <br>
+          Por meio de conexões com os bancos ou requisições aos serviços, os dados consultados passarão por métodos de fusão de dados, facilitando o uso dos dados pelos outros componentes deste projeto. Os métodos de fusão de dados serão escolhidos através de revisões sistemáticas de literatura.
+          <br><br>
+
+          <strong>Desenvolvimento de interface de visualização</strong>
+          <br>
+          Para facilitar o uso concorrente e colaborativo da interface, esta deve ser uma aplicação web, com suporte aos navegadores mais usuais. Sua arquitetura computacional <em>cliente-servidor</em> permitirá que o servidor seja responsável pelo processamento de informação, enquanto o cliente exibe e manipula gráficos e mapas interativos.
+          <br>
+          A interface terá como funcionalidade principal a representação interativa de dados, de maneira individual e correlacionada. Individualmente, cada fonte de dados terá uma visualização específica com filtros de acordo com seu contexto de origem (por exemplo, filtro de mídias sociais por palavra-chave). Ao correlacionar as múltiplas fontes, os dados geográficos serão representados em mapas interativos com informações relevantes da fonte escolhida, gerando uma representação geográfica com cruzamento de dados (por exemplo, mapa de áreas de risco de inundação baseado em dados de sensores móveis).
+        </div>
+
+        <br>
+
+        <strong>Metodologia de Avaliação:</strong>
+        <div class="space">
+          Devido à metodologia de desenvolvimento ágil aplicada no desenvolvimento da interface de visualização de dados geográficos, haverá intervalos onde pesquisadores e membros de agências de emergência utilizarão esta aplicação. As avaliações desses profissionais auxiliarão na definição da ordem de implementação dos requisitos funcionais, entregando primeiro os fundamentais.
+          <br>
+          Além dessa forma de avaliação da interface, ferramentas de analítica web, como a plataforma open source <a href="http://piwik.org/" target="_blank">Piwik</a>, serão responsáveis por monitorar a interface de visualização de dados, registrando as ações realizadas pelos usuários, como: origem do acesso, engajamento (tempo no site e páginas visitas) e rastreamento de cliques.
+          <br>
+          Com a análise dessas informações, será possível aprimorar a experiência do usuário na plataforma e ajustar os métodos de transformação e visualização de dados.
+        </div>
+
+        <br><br>
+
+        <strong>Equipe:</strong>
+        <br>
+        Thiago Henrique Poiani
+        <br>
+        Orientador: <a href="http://www.icmc.usp.br/~jporto/" target="_blank">João Porto de Albuquerque</a>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="transition" id="social"><i class="fa fa-envelope"></i> Social</h2>
+
+      <table>
+        <tr>
+          <td><i class="fa fa-google"></i></td>
+          <td><strong>thpoiani</strong> <em>at</em> gmail <em>dot</em> com</td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-facebook"></i></td>
+          <td><a href="https://www.facebook.com/thpoiani" target="_blank">facebook.com/<strong>thpoiani</strong></a></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-linkedin"></i></td>
+          <td><a href="https://www.linkedin.com/in/thpoiani" target="_blank">linkedin.com/in/<strong>thpoiani</strong></a></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-github"></i></td>
+          <td><a href="https://github.com/thpoiani" target="_blank">github.com/<strong>thpoiani</strong></a></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-skype"></i></td>
+          <td><strong>thpoiani</strong></td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+  <footer class="transition">
+    <p>Thiago Henrique Poiani &copy; 2015</p>
+  </footer>
+
+  <script src="bower_components/mobile-detect/mobile-detect.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+
+  <script src="js/main.js"></script>
+
+  <script src="js/app.module.js"></script>
+  <script src="js/controllers/project.js"></script>
+  <script src="js/controllers/research.js"></script>
+  <script src="js/controllers/event.js"></script>
+</body>
+</html>

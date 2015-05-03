@@ -1,8 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="pt-br" data-ng-app="app">
 <head>
-  <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
 
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -21,11 +19,15 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400">
+  <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
 
 </head>
 <body>
   <header id="header" class="transition">
-    <h1 id="logo">Thiago Henrique Poiani</h1>
+    <a href="/" style="text-decoration: none">
+      <h1 id="logo">Thiago Henrique Poiani</h1>
+    </a>
   </header>
 
   <main id="main">
@@ -140,9 +142,10 @@
   </footer>
 
   <script src="bower_components/mobile-detect/mobile-detect.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+
   <script src="js/main.js"></script>
 
-  <script src="bower_components/angular/angular.min.js"></script>
   <script src="js/app.module.js"></script>
   <script src="js/controllers/project.js"></script>
   <script src="js/controllers/research.js"></script>
