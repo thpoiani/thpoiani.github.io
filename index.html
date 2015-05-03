@@ -1,0 +1,162 @@
+<!doctype html>
+<html class="no-js" lang="pt-br" data-ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Thiago Henrique Poiani</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    [ng\:cloak], [data-ng-cloak], .data-ng-cloak {
+      display: none !important;
+    }
+  </style>
+
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=RobotoDraft:400">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <meta name="google-site-verification" content="C7FqjATmPsMkQzNcQ9jrG9wXft1wu_c5PQPgxa0gP5g" />
+</head>
+<body>
+  <header id="header" class="transition">
+    <a href="/" style="text-decoration: none">
+      <h1 id="logo">Thiago Henrique Poiani</h1>
+    </a>
+  </header>
+
+  <main id="main">
+    <section>
+      <h2 class="transition" id="sobre"><i class="fa fa-book"></i> Sobre</h2>
+      <p class="about">
+        Mestrando em <strong>Ciências da Computação</strong> no Instituto de Ciências Matemáticas e de Computação da <a href="http://www.icmc.usp.br/" target="_blank" title="ICMC-USP">Universidade de São Paulo</a>.
+        <br>
+        Cursando especialização em <strong>Desenvolvimento de Software para Web</strong> na <a href="http://www.ufscar.br" target="_blank" title="UFSCar">Universidade Federal de São Carlos</a>.
+        <br>
+        Tecnólogo em <strong>Análise e Desenvolvimento de Sistemas</strong> pelo <a href="http://www.ifspsaocarlos.edu.br/" target="_blank" title="IFSP">Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, campus São Carlos</a>.
+      </p>
+    </section>
+
+    <section data-ng-controller="ProjectController as project">
+      <h2 class="transition" id="projetos"><i class="fa fa-code"></i> Projetos</h2>
+
+      <ul class="cards">
+        <li class="card small" data-ng-repeat="project in project.projects" data-ng-cloak>
+            <a data-ng-href="{{project.gsx$link.$t}}" target="_blank">
+              <p class="year">{{project.gsx$year.$t}}</p>
+
+              <figure>
+                  <figcaption>
+                    <h3>{{project.gsx$name.$t}}</h3>
+                  </figcaption>
+                <img data-ng-src="{{project.gsx$image.$t}}" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="{{project.gsx$title.$t}}">
+              </figure>
+
+              <div class="description">
+                <p>{{project.gsx$description.$t}}</p>
+              </div>
+            </a>
+        </li>
+      </ul>
+    </section>
+
+    <section data-ng-controller="ResearchController as research">
+      <h2 class="transition" id="pesquisas"><i class="fa fa-university"></i> Pesquisas</h2>
+
+      <ul class="cards">
+        <li class="card large" data-ng-repeat="research in research.researches" data-ng-cloak>
+          <a data-ng-href="{{research.gsx$link.$t}}">
+            <p class="year">{{research.gsx$year.$t}}</p>
+            <h3>{{research.gsx$title.$t}}</h3>
+
+            <div class="description">
+              <p>{{research.gsx$authors.$t}}</p>
+              <p>{{research.gsx$abstract.$t}}</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section data-ng-controller="EventController as event">
+      <h2 class="transition" id="eventos"><i class="fa fa-users"></i> Eventos</h2>
+
+      <ul class="cards">
+
+        <li class="card small" data-ng-repeat="event in event.events" data-ng-cloak>
+          <a data-ng-href="{{event.gsx$link.$t}}" target="_blank">
+            <p class="year">{{event.gsx$year.$t}}</p>
+
+            <figure>
+                <figcaption>
+                  <h3>{{event.gsx$name.$t}}</h3>
+                </figcaption>
+              <img data-ng-src="{{event.gsx$image.$t}}" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="{{event.gsx$title.$t}}">
+            </figure>
+
+            <div class="description">
+              <p><strong>{{event.gsx$title.$t}}</strong></p>
+              <p>{{event.gsx$category.$t}}</p>
+              <p>Local: {{event.gsx$local.$t}}</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="transition" id="social"><i class="fa fa-envelope"></i> Social</h2>
+
+      <table>
+        <tr>
+          <td><i class="fa fa-google"></i></td>
+          <td><strong>thpoiani</strong> <em>at</em> gmail <em>dot</em> com</td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-facebook"></i></td>
+          <td><a href="https://www.facebook.com/thpoiani" target="_blank">facebook.com/<strong>thpoiani</strong></a></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-linkedin"></i></td>
+          <td><a href="https://www.linkedin.com/in/thpoiani" target="_blank">linkedin.com/in/<strong>thpoiani</strong></a></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-github"></i></td>
+          <td><a href="https://github.com/thpoiani" target="_blank">github.com/<strong>thpoiani</strong></a></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-skype"></i></td>
+          <td><strong>thpoiani</strong></td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+  <footer class="transition">
+    <p>Thiago Henrique Poiani &copy; 2015</p>
+  </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.0.0/mobile-detect.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+  <script src="/js/main.js"></script>
+
+  <script src="/js/app.module.js"></script>
+  <script src="/js/controllers/project.js"></script>
+  <script src="/js/controllers/research.js"></script>
+  <script src="/js/controllers/event.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51027304-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
