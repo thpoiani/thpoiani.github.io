@@ -6,6 +6,42 @@
     document.body.className += color;
   }, 0);
 
+///
+
+  var header = document.getElementById('header'),
+      logo   = document.getElementById('logo'),
+      main   = document.getElementById('main');
+
+  function onScroll(event) {
+    var position = window.scrollY;
+
+    if (position >= 82) {
+      if (logo.className.indexOf('small') === -1) {
+        logo.className += 'small';
+      }
+    } else {
+      if (logo.className.indexOf('small') != -1) {
+        logo.className = '';
+      }
+    }
+
+    if (position >= 192) {
+      if (header.className.indexOf('small') === -1) {
+        header.className += ' small';
+        main.className   += 'small';
+      }
+    } else {
+      if (header.className.indexOf('small') != -1) {
+        header.className = '';
+        main.className   = '';
+      }
+    }
+  }
+
+
+  window.addEventListener("scroll", onScroll);
+
+
 })(window, document);
 
 // (function(window, document, undefined) {
