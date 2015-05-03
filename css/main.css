@@ -241,16 +241,16 @@ h2.transition {
 
 main {
   margin: auto;
-  width: 1160px;
+  max-width: 1160px;
 }
 
 h1 {
-  color: #fff;
+  color: #ffffff;
   font-size: 56px;
   font-weight: 400;
   line-height: 1.5;
   margin: 0 auto;
-  width: 1160px;
+  max-width: 1160px;
 }
 
 h2 {
@@ -270,6 +270,7 @@ h2 i.fa {
 h3 {
   font-size: 18px;
   padding: 8px 16px;
+  font-weight: 100;
 }
 
 section {
@@ -293,27 +294,39 @@ section {
   padding: 0;
 
   list-style-type: none;
+  text-align: center;
 }
 
 .card {
   display: inline-block;
   vertical-align: top;
-
-  box-shadow: 0 1px 2px #aaa;
-  background: white;
-
+  background-color: #ffffff;
   font-size: 16px;
-  margin: 0 10px 10px 10px;
-
+  margin: 0 10px 20px 10px;
   position: relative;
+  border-radius: 2px;
+
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  transition: all .3s ease-out;
 }
 
-.card.small {
+.card:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card.small,
+.card.small a {
   width: 270px;
   height: 500px;
 }
 
-.card.large {
+.card.large,
+.card.large a {
   width: 560px;
   height: 500px;
 }
@@ -354,6 +367,47 @@ section {
   font-weight: 400;
 }
 
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  html body {
+    margin: 0 10px;
+  }
+
+  header {
+    height: 64px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 64px;
+    height: 64px;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .card.small,
+  .card.small a,
+  .card.large,
+  .card.large a {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
 
 /* ==========================================================================

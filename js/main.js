@@ -1,4 +1,4 @@
-(function(window, document, undefined) {
+(function(window, document, MobileDetect, undefined) {
 
   var Color = (function() {
     var exports = {},
@@ -78,8 +78,12 @@
     }
 
     exports.sticky = function() {
-      exports.logo();
-      exports.header();
+      var md = new MobileDetect(window.navigator.userAgent);
+
+      if (!md.mobile()) {
+        exports.logo();
+        exports.header();
+      }
     };
 
     function getPosition() {
@@ -96,7 +100,7 @@
   window.addEventListener("scroll", Menu.sticky);
   Color.setColor();
 
-})(window, document);
+})(window, document, window.MobileDetect);
 
 // (function(window, document, undefined) {
 //   var lists = document.querySelectorAll('.cards');
