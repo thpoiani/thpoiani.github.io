@@ -1,46 +1,100 @@
 (function(window, document, undefined) {
-  var colors = ['red', 'purple', 'indigo', 'blue', 'green', 'lime', 'yellow', 'orange', 'brown'],
-      color  = colors[Math.floor(Math.random() * colors.length)];
 
-  setTimeout(function() {
-    document.body.className += color;
-  }, 0);
+  var Color = (function() {
+    var exports = {},
+        Colors  = {
+          RED    : 'red',
+          PURPLE : 'purple',
+          INDIGO : 'indigo',
+          BLUE   : 'blue',
+          GREEN  : 'green',
+          LIME   : 'lime',
+          YELLOW : 'yellow',
+          ORANGE : 'orange',
+          BROWN  : 'brown'
+        }
 
-///
+    exports.setColor = function() {
+      var delay = 0;
 
-  var header = document.getElementById('header'),
-      logo   = document.getElementById('logo'),
-      main   = document.getElementById('main');
+      setTimeout(function() {
+        document.body.className += pickColor();
+      }, delay);
+    };
 
-  function onScroll(event) {
-    var position = window.scrollY;
+    function pickColor() {
+      var array = [
+        Colors.RED,
+        Colors.PURPLE,
+        Colors.INDIGO,
+        Colors.BLUE,
+        Colors.GREEN,
+        Colors.LIME,
+        Colors.YELLOW,
+        Colors.ORANGE,
+        Colors.BROWN
+      ];
 
-    if (position >= 82) {
-      if (logo.className.indexOf('small') === -1) {
-        logo.className += 'small';
+      return array[Math.floor(Math.random() * array.length)];
+    }
+
+    return exports;
+  })();
+
+  var Menu = (function(){
+    var exports = {},
+        header  = document.getElementById('header'),
+        logo    = document.getElementById('logo'),
+        main    = document.getElementById('main'),
+        Limit   = {
+          LOGO : 82,
+          MENU : 192
+        };
+
+    exports.logo = function() {
+      if (getPosition() >= Limit.LOGO && !hasClass(logo, 'small')) {
+        logo.className += ' small';
+        return;
       }
-    } else {
-      if (logo.className.indexOf('small') != -1) {
+
+      if (getPosition() < Limit.LOGO) {
         logo.className = '';
+        return;
       }
     }
 
-    if (position >= 192) {
-      if (header.className.indexOf('small') === -1) {
+    exports.header = function() {
+      if (getPosition() >= Limit.MENU && !hasClass(header, 'small')) {
         header.className += ' small';
-        main.className   += 'small';
+        main.className   += ' small';
+        return;
       }
-    } else {
-      if (header.className.indexOf('small') != -1) {
+
+      if (getPosition() < Limit.MENU) {
         header.className = '';
         main.className   = '';
+        return;
       }
     }
-  }
 
+    exports.sticky = function() {
+      exports.logo();
+      exports.header();
+    };
 
-  window.addEventListener("scroll", onScroll);
+    function getPosition() {
+      return window.scrollY;
+    }
 
+    function hasClass(element, clazz) {
+      return element.className.indexOf(clazz) != -1;
+    }
+
+    return exports;
+  })();
+
+  window.addEventListener("scroll", Menu.sticky);
+  Color.setColor();
 
 })(window, document);
 
