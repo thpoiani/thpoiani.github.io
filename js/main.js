@@ -71,7 +71,7 @@
       }
 
       if (getPosition() < Limit.MENU) {
-        header.className = '';
+        header.className = ' transition';
         main.className   = '';
         return;
       }
